@@ -25,32 +25,32 @@ npm run dev
 
 ## What's included
 
-- ✅ Next.js 16 (App Router, RSC)
-- ✅ TypeScript strict mode
-- ✅ Server Component that exchanges identity → SDK token (HMAC-signed)
-- ✅ Client Component that loads `@liqaa/js` and shows a call button
-- ✅ Webhook handler at `/api/webhooks/liqaa` with HMAC verification + replay protection
-- ✅ Tailwind CSS v4 (skip if you don't want it)
-- ✅ ESLint + Prettier + tsconfig strict
-- ✅ Ready-to-deploy on Vercel (one-click)
+- Next.js 16 (App Router, RSC)
+- TypeScript strict mode
+- Server Component that exchanges identity → SDK token (HMAC-signed)
+- Client Component that loads `@liqaa/js` and shows a call button
+- Webhook handler at `/api/webhooks/liqaa` with HMAC verification + replay protection
+- Tailwind CSS v4 (skip if you don't want it)
+- ESLint + Prettier + tsconfig strict
+- Ready-to-deploy on Vercel (one-click)
 
 ## Project layout
 
 ```
 .
-├── app/
-│   ├── page.tsx              # Server Component — fetches sdk_token
-│   ├── layout.tsx
-│   ├── liqaa-button.tsx      # Client Component — calls LIQAA.startCall()
-│   └── api/
-│       └── webhooks/
-│           └── liqaa/
-│               └── route.ts  # Webhook receiver with HMAC verification
-├── lib/
-│   └── liqaa.server.ts       # exchangeIdentityForSdkToken() — server-only
-├── .env.example              # required env vars
-├── package.json
-└── README.md
+ app/
+ page.tsx # Server Component — fetches sdk_token
+ layout.tsx
+ liqaa-button.tsx # Client Component — calls LIQAA.startCall()
+ api/
+ webhooks/
+ liqaa/
+ route.ts # Webhook receiver with HMAC verification
+ lib/
+ liqaa.server.ts # exchangeIdentityForSdkToken() — server-only
+ .env.example # required env vars
+ package.json
+ README.md
 ```
 
 ## Environment variables
@@ -58,9 +58,9 @@ npm run dev
 Required for the integration to work:
 
 ```bash
-LIQAA_PK=pk_live_…             # public key (browser-safe)
-LIQAA_SK=sk_live_…             # secret key — SERVER ONLY
-LIQAA_WEBHOOK_SECRET=whsec_…   # signing secret (returned once when you create a webhook)
+LIQAA_PK=pk_live_… # public key (browser-safe)
+LIQAA_SK=sk_live_… # secret key — SERVER ONLY
+LIQAA_WEBHOOK_SECRET=whsec_… # signing secret (returned once when you create a webhook)
 ```
 
 For local dev:
@@ -85,9 +85,9 @@ npm run start
 
 ## What this template does NOT do
 
-- 🚫 Authentication (bring your own — NextAuth, Clerk, Lucia, etc.)
-- 🚫 Database (the example uses a hard-coded user)
-- 🚫 UI design beyond minimum (style it however you want)
+- Authentication (bring your own — NextAuth, Clerk, Lucia, etc.)
+- Database (the example uses a hard-coded user)
+- UI design beyond minimum (style it however you want)
 
 The template is a **clean foundation**, not a finished product. Drop your auth + UI on top.
 
